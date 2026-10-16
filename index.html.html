@@ -321,6 +321,25 @@
     .contact-panel p,.section-desc,.hero-intro,.capability-card p,.solution-card .summary,.about-story p,.insight-content p{color:var(--text-dark)}
     a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--blue)}
     ::selection{background:var(--teal);color:var(--deep-blue)}
+    /* Personal photography and travel journal */
+    .profile-photo-link{display:block;position:relative;z-index:1;width:calc(50% + 37px);margin:0 auto;overflow:hidden;border-radius:16px;border-bottom:3px solid var(--aqua)}
+    .profile-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .45s ease}
+    .profile-photo-link:hover .profile-photo{transform:scale(1.025)}
+    .profile-card:after{pointer-events:none}
+    .profile-card .profile-footer{position:relative;z-index:1}
+    .travel-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px}
+    .travel-heading .section-head{margin:0;max-width:720px}
+    .travel-note{color:var(--deep-blue);font-size:12px;white-space:nowrap}
+    .travel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;width:calc(50% + 14px);margin-inline:auto}
+    .travel-photo-card{margin:0;min-width:0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#FFFFFF;box-shadow:var(--shadow)}
+    .travel-photo-link{display:block;overflow:hidden;background:var(--light)}
+    .travel-photo-link img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;transition:transform .5s ease}
+    .travel-photo-link:hover img{transform:scale(1.025)}
+    .travel-photo-card figcaption{padding:24px 26px}
+    .travel-photo-card small{font:700 11px Inter,sans-serif;letter-spacing:.12em;color:var(--blue)}
+    .travel-photo-card h3{font-size:21px;font-weight:800;margin:10px 0 8px}
+    .travel-photo-card p{font-size:14px;line-height:1.8;color:var(--text-dark);margin:0}
+    @media(max-width:680px){.profile-photo-link{width:calc(50% + 28px);margin:0 auto}.travel-heading{display:block}.travel-note{display:block;margin-top:18px}.travel-grid{grid-template-columns:1fr;gap:22px;width:50%}.travel-photo-card figcaption{padding:21px}}
   </style>
 </head>
 <body>
@@ -415,7 +434,7 @@
       <div class="container-custom">
         <div class="section-head reveal"><span class="eyebrow"><span class="eyebrow-line"></span> ABOUT / WHO WE ARE</span><h2 class="section-title" id="aboutHeading">以專業洞察為起點，<br /><span class="gradient-text">以技術整合創造價值。</span></h2><p class="section-desc">個人是理解需求的第一道窗口，團隊則是將構想轉化為實際系統的專業後盾。</p></div>
         <div class="about-layout">
-          <article class="profile-card reveal"><div><div class="profile-monogram" aria-label="Leon Lee 品牌字母 LL">LL</div><span class="profile-label">YOUR TECHNOLOGY PARTNER</span><h3>李君豪 <span style="font:700 16px Inter;color:#243746">Leon Lee</span></h3><p class="role">業務經理｜智慧科技與 AI 解決方案顧問</p></div><div class="profile-footer"><strong class="experience-number">07</strong><span>年產業經驗<br />聚焦 B2B 科技整合與智慧應用推廣</span></div></article>
+          <article class="profile-card reveal"><div><a class="profile-photo-link" href="作品集/me.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看 Leon Lee 生活照原圖（另開分頁）"><img class="profile-photo" src="作品集/me.jpg" alt="Leon Lee 在餐廳的生活合照" width="4032" height="3024" loading="lazy" decoding="async" /></a><span class="profile-label">YOUR TECHNOLOGY PARTNER</span><h3>李君豪 <span style="font:700 16px Inter;color:#243746">Leon Lee</span></h3><p class="role">業務經理｜智慧科技與 AI 解決方案顧問</p></div><div class="profile-footer"><strong class="experience-number">07</strong><span>年產業經驗<br />聚焦 B2B 科技整合與智慧應用推廣</span></div></article>
           <div class="about-story reveal" data-delay="1"><span class="eyebrow">COMPANY / 于宸科技有限公司</span><h3 class="company-title">從需求對話，到可落地的科技解決方案。</h3><p>于宸科技以 AI、IoT、客製化軟硬體研發及雲端平台整合為核心，連結終端設備、嵌入式控制、資料處理與使用者應用，協助企業尋找符合實際營運情境的科技導入方向。</p><p>Leon Lee 具備 7 年產業經驗，專注於系統整合、智慧科技應用與 B2B 解決方案推廣。結合技術理解、商業判斷與跨領域溝通，陪伴客戶從需求釐清、技術評估到方案規劃，兼顧成本效益、可維護性及未來擴充。</p><div class="story-quote">「科技的價值，不只在於技術多先進，更在於它能否真正解決企業面對的問題。」</div></div>
         </div>
         <div class="value-grid">
@@ -498,6 +517,30 @@
         <article class="insight-card reveal" data-delay="2"><div class="insight-art insight-violet" aria-hidden="true"><svg viewBox="0 0 300 171" fill="none"><g fill="#FFFFFF" stroke="#2AA7D6" stroke-width="2"><rect x="30" y="51" width="76" height="70" rx="12"/><rect x="112" y="22" width="76" height="70" rx="12"/><rect x="194" y="51" width="76" height="70" rx="12"/></g><g stroke="#2AA7D6" stroke-width="3" stroke-linecap="round"><path d="M62 73h18M62 83h28M143 47h17m-17 12h17m58 14h23m-23 11h23"/><path d="M106 85h19m63 0h18"/></g><path d="M133 139c16-11 26-11 36 0m-30 9c9-5 15-5 24 0" stroke="#2AA7D6" stroke-width="2" stroke-linecap="round"/></svg></div><div class="insight-content"><div class="insight-tag"><span>ENGINEERING</span><em>內容預覽</em></div><h3>客製化軟硬體開發：如何降低整合風險？</h3><p>透過規格、介面、驗證與變更管理，降低研發中的協作成本。</p><button class="read-insight" data-article="custom" type="button">閱讀內容初稿 <svg class="icon"><use href="#i-arrow"/></svg></button></div></article>
         <article class="insight-card reveal" data-delay="3"><div class="insight-art insight-sky" aria-hidden="true"><svg viewBox="0 0 300 171" fill="none"><g fill="#FFFFFF" stroke="#2AA7D6" stroke-width="2"><rect x="31" y="58" width="63" height="50" rx="10"/><rect x="119" y="23" width="63" height="50" rx="10"/><rect x="209" y="58" width="63" height="50" rx="10"/><rect x="119" y="118" width="63" height="36" rx="10"/></g><g stroke="#2AA7D6" stroke-width="2.5" stroke-dasharray="5 6"><path d="M94 83h24m64 0h27m-59-10v45m-56-35 55-46m32 0 28 46"/></g><g fill="#005BAC"><circle cx="62" cy="82" r="8"/><circle cx="151" cy="48" r="8"/><circle cx="241" cy="82" r="8"/><circle cx="151" cy="136" r="8"/></g></svg></div><div class="insight-content"><div class="insight-tag"><span>SYSTEM DESIGN</span><em>內容預覽</em></div><h3>從感測器到雲端：解析智慧場域系統架構</h3><p>了解 Edge、Connectivity、Cloud 與 Dashboard 之間的協作關係。</p><button class="read-insight" data-article="architecture" type="button">閱讀內容初稿 <svg class="icon"><use href="#i-arrow"/></svg></button></div></article>
       </div></div>
+    </section>
+
+    <!-- PERSONAL TRAVEL JOURNAL -->
+    <section id="travel" class="section section-soft" aria-labelledby="travelHeading">
+      <div class="container-custom">
+        <div class="travel-heading">
+          <div class="section-head">
+            <span class="eyebrow"><span class="eyebrow-line"></span> LIFE / TRAVEL JOURNAL</span>
+            <h2 class="section-title" id="travelHeading">工作之外，<br /><span class="gradient-text">旅途中的生活風景。</span></h2>
+            <p class="section-desc">用照片收藏走過的風景，也記下與身邊的人一起探索世界的時刻。</p>
+          </div>
+          <span class="travel-note"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> 點擊照片，另開分頁欣賞原圖</span>
+        </div>
+        <div class="travel-grid">
+          <figure class="travel-photo-card">
+            <a class="travel-photo-link" href="作品集/1.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看古城散步原圖（另開分頁）"><img src="作品集/1.jpg" alt="旅途中在紅磚古城牆與綠樹旁的合照" width="3024" height="4032" loading="lazy" decoding="async" /></a>
+            <figcaption><small>01 / MOMENTS ON THE ROAD</small><h3>古城散步</h3><p>紅磚、綠意與藍天，收藏旅途裡的悠閒片刻。</p></figcaption>
+          </figure>
+          <figure class="travel-photo-card">
+            <a class="travel-photo-link" href="作品集/2.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看鳥居下的記憶原圖（另開分頁）"><img src="作品集/2.jpg" alt="旅途中在紅色鳥居下與神社參道上的合照" width="3024" height="4032" loading="lazy" decoding="async" /></a>
+            <figcaption><small>02 / MOMENTS ON THE ROAD</small><h3>鳥居下的記憶</h3><p>沿著參道慢慢走，感受旅途中不同的文化風景。</p></figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
 
     <!-- CORE PRODUCTS & TECHNOLOGY SOLUTIONS -->
